@@ -21,9 +21,7 @@ before_script:
 
 jobs:
   include:
-    stage: test
-      script: ./test 1
-        - stage: build
-          script: echo "hello"
-        - stage: deploy
-          script: echo "world"
+    - stage: build
+      script: echo "hello"
+    - stage: deploy
+      script: echo "world"
