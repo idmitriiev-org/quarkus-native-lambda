@@ -19,5 +19,11 @@ cache:
 before_script:
   - git fetch
 
-script:
-  - ./gradlew clean build
+jobs:
+  include:
+    stage: test
+      script: ./test 1
+        - stage: build
+          script: echo "hello"
+        - stage: deploy
+          script: echo "world"
