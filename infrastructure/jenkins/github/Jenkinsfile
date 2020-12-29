@@ -17,7 +17,7 @@ pipeline {
                     deleteDir()
                 }
                 dir('build-folder') {
-                    git branch: 'master',
+                    git branch: 'my-pr',
                             url: 'https://github.com/idmitriiev-org/quarkus-native-lambda'
                     script {
                         def commitSha = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
