@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    options {
+        skipDefaultCheckout()
+        parallelsAlwaysFailFast()
+        timestamps()
+        timeout(time: 15, unit: 'MINUTES')
+        buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '30', daysToKeepStr: '7'))
+    }
+    triggers {
+        pollSCM('')
+    }
+    stages {
+        stage('Checkout project') {
+            steps {
+                dir('build-folder') {
+                    deleteDir()
+                }
+                dir('build-folder') {
+                    git branch: 'master',
+                            url: 'https://github.com/idmitriiev-org/quarkus-native-lambda'
+                    script {
+                        def commitSha = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
+                        def commitMessage = sh(returnStdout: true, script: "git log -1 --pretty=%B")
+                        currentBuild.description = commitSha + " : " + commitMessage
+                    }
+                }
+            }
+        }
+        stage('Build') {
+            stages {
+                stage('Build') {
+                    steps {
+                        dir('build-folder') {
+                            sh './gradlew clean build'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
