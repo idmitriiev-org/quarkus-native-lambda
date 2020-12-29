@@ -29,6 +29,13 @@ pipeline {
         }
         stage('Build') {
             stages {
+                stage('Print env') {
+                    steps {
+                        dir('build-folder') {
+                            sh 'printenv'
+                        }
+                    }
+                }
                 stage('Build') {
                     steps {
                         dir('build-folder') {
