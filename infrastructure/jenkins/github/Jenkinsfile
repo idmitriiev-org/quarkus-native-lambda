@@ -40,7 +40,7 @@ pipeline {
                 stage('Build') {
                     steps {
                         dir('build-folder') {
-                            sh './gradlew clean build'
+                            sh './gradlew clean build -x test'
                         }
                     }
                 }
