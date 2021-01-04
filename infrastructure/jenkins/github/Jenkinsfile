@@ -20,9 +20,9 @@ pipeline {
                     git branch: 'my-pr',
                             url: 'https://github.com/idmitriiev-org/quarkus-native-lambda'
                     script {
-                        def commitSha = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
+                        /*def commitSha = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
                         def commitMessage = sh(returnStdout: true, script: "git log -1 --pretty=%B")
-                        currentBuild.description = commitSha + " : " + commitMessage
+                        currentBuild.description = commitSha + " : " + commitMessage*/
                     }
                 }
             }
