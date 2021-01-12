@@ -11,7 +11,7 @@ pipeline {
         pollSCM('')
     }
     stages {
-        stage('Checkout project') {
+        /*stage('Checkout project') {
             steps {
                 dir('build-folder') {
                     deleteDir()
@@ -26,13 +26,11 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
         stage('Build') {
             steps {
-                dir('build-folder') {
-                    // sh './gradlew clean build -x test'
-                    sh 'ls -lah'
-                }
+                // sh './gradlew clean build -x test'
+                print "Hello World"
             }
         }
     }
