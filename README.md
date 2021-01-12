@@ -50,31 +50,6 @@ If you want to learn more about building native executables, please consult http
 
 Guide: https://quarkus.io/guides/amazon-lambda
 
-trigger build 12
-XBJZclnG
-wOfjScYm
-TynQTHxm
-QCaNzhFi
-JSixkXaX
-PFlYIaVP
-UygpLBJj
-zlveTqiD
-hpRlIbhV
-jJVUrIRK
-jeLYpoqW
-NquPebfV
-STDLTzUR
-HwtrpYbe
-DOHgXYdt
-mwlhRnqh
-WBRipfoQ
-LkKpPdim
-bKaSirQA
-aPbWZoVd
-uRfcRXTO
-cPBGtinx
-pVTRmBJk
-JmLWoDcH
-XQScVNkJ
-pgDLEokD
-itgrmzrl
+trigger build 13
+
+
