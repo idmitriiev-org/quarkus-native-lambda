@@ -28,20 +28,10 @@ pipeline {
             }
         }
         stage('Build') {
-            stages {
-                stage('Print env') {
-                    steps {
-                        dir('build-folder') {
-                            sh 'printenv'
-                        }
-                    }
-                }
-                stage('Build') {
-                    steps {
-                        dir('build-folder') {
-                            sh './gradlew clean build'
-                        }
-                    }
+            steps {
+                dir('build-folder') {
+                    // sh './gradlew clean build -x test'
+                    sh 'ls -lah'
                 }
             }
         }
