@@ -8,4 +8,4 @@ function myFunc() {
   git push upstream my-pr
 }
 
-for ((i=1;i<=10;i++)); do myFunc; done
+for ((i=1;i<=1;i++)); do myFunc; done
