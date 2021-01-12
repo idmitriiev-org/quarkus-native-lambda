@@ -11,7 +11,7 @@ pipeline {
         pollSCM('')
     }
     stages {
-        /*stage('Checkout project') {
+        stage('Checkout project') {
             steps {
                 dir('build-folder') {
                     deleteDir()
@@ -25,12 +25,6 @@ pipeline {
                         currentBuild.description = commitSha + " : " + commitMessage
                     }
                 }
-            }
-        }*/
-        stage('Build') {
-            steps {
-                // sh './gradlew clean build -x test'
-                print "Hello World"
             }
         }
     }
