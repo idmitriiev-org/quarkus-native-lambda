@@ -4,8 +4,7 @@ pipeline {
         skipDefaultCheckout()
         parallelsAlwaysFailFast()
         timestamps()
-        timeout(time: 15, unit: 'MINUTES')
-        buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '30', daysToKeepStr: '7'))
+        timeout(time: 1, unit: 'MINUTES')
     }
     triggers {
         pollSCM('')
