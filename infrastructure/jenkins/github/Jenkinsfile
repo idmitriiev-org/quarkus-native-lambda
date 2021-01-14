@@ -11,7 +11,7 @@ pipeline {
         pollSCM('')
     }
     stages {
-        /*stage('Checkout project') {
+        stage('Checkout project') {
             steps {
                 dir('build-folder') {
                     deleteDir()
@@ -20,14 +20,13 @@ pipeline {
                     git branch: 'my-pr',
                             url: 'https://github.com/idmitriiev-org/quarkus-native-lambda'
                     script {
-                        *//*def commitSha = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
+                        def commitSha = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
                         def commitMessage = sh(returnStdout: true, script: "git log -1 --pretty=%B")
-                        currentBuild.description = commitSha + " : " + commitMessage*//*
-                        print "commited"
+                        currentBuild.description = commitSha + " : " + commitMessage
                     }
                 }
             }
-        }*/
+        }
         stage('Build') {
             steps {
                 // sh './gradlew clean build -x test'
