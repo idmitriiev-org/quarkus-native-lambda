@@ -4,7 +4,7 @@ pipeline {
         skipDefaultCheckout()
         parallelsAlwaysFailFast()
         timestamps()
-        timeout(time: 5, unit: 'MINUTES')
+        timeout(time: 1, unit: 'MINUTES')
         buildDiscarder(logRotator(numToKeepStr: '9999', artifactNumToKeepStr: '9999', daysToKeepStr: '9999'))
     }
     triggers {
