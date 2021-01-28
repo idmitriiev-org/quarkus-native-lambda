@@ -28,7 +28,8 @@ pipeline {
                         def commitSha = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
                         def commitMessage = sh(returnStdout: true, script: "git log -1 --pretty=%B")
                         currentBuild.description = commitSha + " : " + commitMessage
-                        currentBuild.result = 'UNSTABLE'
+                        currentBuild.result = 'FAILURE'
+                        error("Build failed because of this and that..")
                     }
                 }
             }
