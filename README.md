@@ -50,4 +50,4 @@ If you want to learn more about building native executables, please consult http
 
 Guide: https://quarkus.io/guides/amazon-lambda
 
-trigger build 62
+trigger build 63
